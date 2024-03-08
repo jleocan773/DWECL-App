@@ -1,11 +1,11 @@
 export const environment = {
   production: true,
   firebase: {
-    apiKey: "AIzaSyAj69lOQH_njCwzun013f2qB5JNAFT0jig",
-    authDomain: "angularfireult.firebaseapp.com",
-    projectId: "angularfireult",
-    storageBucket: "angularfireult.appspot.com",
-    messagingSenderId: "79674295691",
-    appId: "1:79674295691:web:e993e08f7c4894b3535b8e"
+    apiKey: 'AIzaSyDr6SM0j0G7wQqVZzv1nLiBITsCPz89jvA',
+    authDomain: 'dwecl-aplicacion.firebaseapp.com',
+    projectId: 'dwecl-aplicacion',
+    storageBucket: 'dwecl-aplicacion.appspot.com',
+    messagingSenderId: '77074916139',
+    appId: '1:77074916139:web:2ee7abd34a50a3f8e75b6e',
   },
 };
