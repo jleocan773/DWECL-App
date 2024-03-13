@@ -1,20 +1,31 @@
-<p>Name:</p>
-<input type="string" [(ngModel)]="name">
-<p>Precio:</p>
-<input type="number" [(ngModel)]="price">
+<div class="productsControls">
+    <p>Name:</p>
+    <input type="string" [(ngModel)]="name">
+    <p>Precio:</p>
+    <input type="number" [(ngModel)]="price">
 
-<button (click)="write()">Add</button>
-
-<div class="contenedorProductos">
-    <mat-grid-list *ngFor="let item of products" cols="2">
-        <mat-grid-tile>
-            <mat-card class="producto">
-                <mat-card-header>
-                    <mat-card-title>Product: {{item.payload.doc.data().name}}</mat-card-title>
-                    <mat-card-subtitle>Price: {{item.payload.doc.data().price}}</mat-card-subtitle>
-                </mat-card-header>
-                <img mat-card-image src="{{item.payload.doc.data().img}}" alt="Imagen Producto">
-            </mat-card>
-        </mat-grid-tile>
-    </mat-grid-list>
+    <button (click)="write()">Add</button>
 </div>
+
+<mat-grid-list cols="2" gutterSize="10px">
+    <mat-grid-tile *ngFor="let item of products">
+        <mat-card class="producto">
+            <mat-card-header>
+                <mat-card-title>Product: {{item.payload.doc.data().name}}</mat-card-title>
+                <mat-card-title>Price: {{item.payload.doc.data().price}} €</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image [src]="item.payload.doc.data().img" alt="Imagen Producto">
+            <mat-card-content>
+                <h2 class="counter">Quantity: {{item.counter}}</h2>
+            </mat-card-content>
+            <mat-card-actions class="action_buttons">
+                <button mat-icon-button (click)="incrementCounter(item.payload.doc.data().name)">
+                    <mat-icon>add</mat-icon>
+                </button>
+                <button mat-icon-button (click)="remove(item.payload.doc.data().name)">
+                    <mat-icon>remove</mat-icon>
+                </button>
+            </mat-card-actions>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>
