@@ -9,6 +9,13 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from '../environments/environment';
 
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatCardModule} from '@angular/material/card';
+
+
 // components
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
@@ -23,6 +30,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AuthService } from './shared/services/auth.service';
 import { ReadWriteDataComponent } from './components/read-write-data/read-write-data.component';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MenuComponent } from './menu/menu.component';
+import { ProductsComponent } from './products/products.component';
 
 
 @NgModule({
@@ -34,6 +44,8 @@ import { FormsModule } from '@angular/forms';
     ForgotPasswordComponent,
     VerifyEmailComponent,
     ReadWriteDataComponent,
+    MenuComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +55,13 @@ import { FormsModule } from '@angular/forms';
     AngularFireStorageModule,
     AngularFireDatabaseModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatGridListModule,
+    MatCardModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],
